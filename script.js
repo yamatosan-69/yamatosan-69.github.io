@@ -1,5 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
+    // --- typing effect ---
+    const textToType = "Master Student in Statistics & Data Science at National Taiwan University";
+    const typingElement = document.getElementById('typing-text');
+    let typeIndex = 0;
+
+    function typeWriter() {
+        if (typeIndex < textToType.length) {
+            typingElement.textContent += textToType.charAt(typeIndex);
+            typeIndex++;
+            setTimeout(typeWriter, 50); // Adjust typing speed here
+        }
+    }
+
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+
+
+    // --- Mobile Navigation Toggle ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -14,11 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Theme Toggle
+    // --- Theme Toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle.querySelector('i');
 
-    // Check for saved user preference, if any, on load of the website
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
@@ -42,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scroll for anchor links (handling better than default CSS in some cases)
+    // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -60,9 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animate elements on scroll
+    // --- Navbar Glassmorphism on Scroll ---
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // --- Staggered Scroll Animations ---
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -74,20 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.section-title, .project-card, .timeline-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    // Stagger delays for specific containers
+    const staggerItems = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
+    staggerItems.forEach((el, index) => {
+        // Reset delay if needed or calculate based on index within viewport
+        // Simple stagger by adding delay via style
+        // Note: For true staggering within a view, complex logic is needed. 
+        // Here we just let natural scroll handle it, but we can add small delays if multiple are in view.
         observer.observe(el);
     });
 
-    // Add visible class styling dynamically
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
+    // --- 3D Tilt Effect for Cards ---
+    const cards = document.querySelectorAll('.project-card, .experience-card, .timeline-item');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+            const rotateY = ((x - centerX) / centerX) * 5;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
 });

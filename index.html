@@ -38,7 +38,7 @@
             <div class="hero-content">
                 <span class="greeting">Hello, I'm</span>
                 <h1 class="name">Tzu-Hsuan Shao</h1>
-                <h2 class="title">Master Student in Statistics & Data Science at National Taiwan University</h2>
+                <h2 class="title"><span id="typing-text"></span><span class="cursor">|</span></h2>
                 <p class="bio">Passionate about turning data into actionable insights through statistical modeling,
                     machine learning, and time series analysis.</p>
                 <div class="hero-btns">
@@ -66,13 +66,12 @@
                 <div class="education">
                     <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                     <div class="timeline-item">
-                        <span class="date">2024 – 2026 (Expected)</span>
+                        <span class="date">2024 – Expected 2026</span>
                         <h4>National Taiwan University</h4>
                         <p class="degree">Master of Science in Statistics and Data Science</p>
                         <ul class="details">
-                            <li>Recipient of the <strong>Academic Excellence Award</strong> for outstanding performance.
-                            </li>
-                            <li>Focus: Time Series Analysis, Functional Data, Statistical Learning.</li>
+                            <li>Specialized in Time Series Analysis, Functional Data, Semiparametric Analysis and
+                                Statistical Learning.</li>
                         </ul>
                     </div>
                     <div class="timeline-item">
@@ -83,42 +82,48 @@
                     </div>
                 </div>
 
+                <div class="honors-section" style="margin-top: 2rem;">
+                    <h3><i class="fas fa-award"></i> Honors & Languages</h3>
+                    <ul class="details" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 0.5rem;"><strong>TOEIC</strong>: Score of 880 (Gold Certificate)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Languages</strong>: Mandarin (Native), English
+                            (Professional Proficiency)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Awards</strong>: Academic Excellence Award (Freshman
+                            Year & Graduate Coursework)</li>
+                    </ul>
+                </div>
+
                 <div class="skills-container">
                     <h3><i class="fas fa-code"></i> Technical Skills</h3>
                     <div class="skill-category">
                         <h4>Languages</h4>
                         <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">R</span>
-                            <span class="tag">SQL</span>
+                            <span class="tag">Python (TensorFlow, PyTorch)</span>
+                            <span class="tag">R (mgcv, KernSmooth, tidyverse)</span>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h4>Deep Learning</h4>
                         <div class="tags">
-                            <span class="tag">Tensorflow</span>
-                            <span class="tag">BERT</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">RNN</span>
+                            <span class="tag">GNNs (ASTGCN, AGCRN)</span>
                             <span class="tag">LSTM</span>
-                            <span class="tag">GAN</span>
-                            <span class="tag">Encoder-Decoder</span>
+                            <span class="tag">Attention Mechanisms</span>
+                            <span class="tag">CNN</span>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h4>Machine Learning</h4>
                         <div class="tags">
-                            <span class="tag">SVM</span>
+                            <span class="tag">Semiparametric Regression (ADE, SIR, MAVE)</span>
                             <span class="tag">Random Forest</span>
-                            <span class="tag">GNNs (ASTGCN, AGCRN)</span>
+                            <span class="tag">SVM</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Analytical Methods</h4>
+                        <h4>Data Engineering</h4>
                         <div class="tags">
-                            <span class="tag">GLM</span>
-                            <span class="tag">Semiparametric Regression</span>
-                            <span class="tag">Spectral Analysis</span>
+                            <span class="tag">Large-scale data processing</span>
+                            <span class="tag">kNN-based algorithm optimization</span>
                         </div>
                     </div>
                 </div>
@@ -128,7 +133,7 @@
 
     <section id="experience" class="section alternate-bg">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="experience-card">
                 <div class="exp-header">
                     <h3>Quality Manager Intern</h3>
@@ -136,10 +141,11 @@
                     <span class="date">July 2025 – Aug 2025</span>
                 </div>
                 <ul class="exp-details">
-                    <li>Identified machine anomalies using <strong>Statistical Process Control (SPC) charts</strong>,
-                        achieving nearly 100% match rate with senior engineer evaluations.</li>
-                    <li>Integrated <strong>R and SQL</strong> to reconcile naming discrepancies between SPC charts,
-                        measurement definitions, and customer requirements.</li>
+                    <li>Analyzed machine anomalies using <strong>Statistical Process Control (SPC)</strong>, achieving a
+                        near-perfect match rate with expert evaluations through automated data validation.</li>
+                    <li>Developed <strong>R and SQL scripts</strong> to automate the reconciliation of naming
+                        discrepancies across SPC charts, improving data integrity for critical customer requirements.
+                    </li>
                 </ul>
             </div>
         </div>
@@ -158,16 +164,16 @@
                         </div>
                         <div class="tech-stack">
                             <span>Python</span>
-                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
                             <span>GNNs</span>
                         </div>
                         <ul class="project-desc">
-                            <li>Developed an <strong>Encoder-Decoder LSTM with Global Attention (LLA)</strong>, reducing
-                                multi-step prediction error (MAE) to 1.1459.</li>
-                            <li>Implemented <strong>ASTGCN</strong> to model spatial-temporal dependencies between 100+
-                                stations.</li>
-                            <li>Formulated risk assessment model reaching <strong>F1-score of 0.8723</strong> for
-                                predicting 'Empty' events.</li>
+                            <li>Engineered an <strong>Encoder-Decoder LSTM with Global Attention</strong>, reducing
+                                multi-step prediction MAE to 1.1459 for bike-sharing demand.</li>
+                            <li>Implemented <strong>ASTGCN (Attention Based Spatial-Temporal Graph Convolutional
+                                    Networks)</strong> to capture complex dependencies between 100+ stations.</li>
+                            <li>Constructed a high-precision risk assessment model (<strong>F1-score: 0.8723</strong>)
+                                to predict and prevent station depletion events.</li>
                         </ul>
                         <div class="project-links">
                             <a href="assets/documents/youbike_forecasting.pdf" target="_blank" class="btn-sm"><i
@@ -180,7 +186,7 @@
                 <article class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3>Energy Consumption Modeling</h3>
+                            <h3>Energy: Power Consumption Semiparametric Modeling</h3>
                             <span class="project-date">Dec 2025</span>
                         </div>
                         <div class="tech-stack">
@@ -189,13 +195,17 @@
                             <span>mgcv</span>
                         </div>
                         <ul class="project-desc">
-                            <li>Applied <strong>MAVE and SIR</strong> techniques to isolate Temperature as the primary
-                                global driver for regional power usage.</li>
-                            <li>Utilized <strong>Average Derivative Estimation (ADE)</strong> to identify high-frequency
-                                local fluctuations in solar radiation.</li>
-                            <li>Mapped peak usage trends against diurnal temperature sensitivity using a
-                                <strong>Time-Varying Coefficient Model</strong>.
+                            <li>Implemented <strong>MAVE, SIR, and ADE</strong> algorithms to perform dimension
+                                reduction on complex environmental datasets.</li>
+                            <li>Optimized computational efficiency of the MAVE estimation by integrating
+                                <strong>k-Nearest Neighbors (kNN, k=500)</strong>, effectively handling high-density
+                                point estimations.
                             </li>
+                            <li>Utilized <strong>Average Derivative Estimation (ADE)</strong> to isolate high-frequency
+                                local fluctuations in solar radiation, distinguishing local noise from global
+                                temperature trends.</li>
+                            <li>Developed a <strong>Time-Varying Coefficient Model</strong> using cyclic cubic splines
+                                to map dynamic power consumption patterns across a 24-hour diurnal cycle.</li>
                         </ul>
                         <div class="project-links">
                             <a href="assets/documents/energy_modeling.pdf" target="_blank" class="btn-sm"><i
@@ -208,7 +218,7 @@
                 <article class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3>COVID-19 Transmission Cycle Analysis</h3>
+                            <h3>Healthcare: COVID-19 Transmission Cycle Analysis</h3>
                             <span class="project-date">Dec 2024</span>
                         </div>
                         <div class="tech-stack">
@@ -217,10 +227,10 @@
                             <span>Spectral Analysis</span>
                         </div>
                         <ul class="project-desc">
-                            <li>Executed <strong>Spectral Analysis</strong> using Fast Fourier Transformations to detect
-                                a latent <strong>3.56-day transmission cycle</strong>.</li>
-                            <li>Fitted <strong>SARIMA</strong> models to capture seasonal fluctuations and growth trends
-                                in daily confirmed case data.</li>
+                            <li>Applied <strong>Fast Fourier Transformations (FFT)</strong> for spectral analysis to
+                                detect latent transmission cycles within epidemiological data.</li>
+                            <li>Optimized <strong>SARIMA</strong> models to capture seasonal fluctuations and growth
+                                trends in daily confirmed case data.</li>
                         </ul>
                         <div class="project-links">
                             <a href="assets/documents/covid_analysis.pdf" target="_blank" class="btn-sm"><i
